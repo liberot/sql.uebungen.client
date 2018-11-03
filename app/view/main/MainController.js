@@ -10,14 +10,14 @@ Ext.define('cliento.view.main.MainController', {
     alias: 'controller.main',
 
     resetDB: function(){
-        Ext.MessageBox.alert('resetDB');
+        Ext.MessageBox.alert('Rreset DB');
     },
 
     importFromSource: function(){
-        Ext.MessageBox.alert('importFromSource');
+        Ext.MessageBox.alert('Import Source Files');
     },
 
     importGarbage: function(){
-        Ext.MessageBox.alert('importGarbage');
+        Ext.MessageBox.alert('Import Garbage');
     }
 });
