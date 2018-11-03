@@ -1,5 +1,5 @@
 $app-name:  dynamic( 'exclient' );
-$image-search-path: '/Users/liberot/Workspace/SQLExercises/sql.uebungen/excercises.client/build/production/exclient/classic/resources';
+$image-search-path: '/Users/liberot/Workspace/SQLExercises/sql.uebungen.client/build/production/exclient/classic/resources';
 $theme-name:  dynamic( 'theme-triton' );
 $include-ext-abstractcomponent: dynamic(true);;
 $include-ext-abstractcontainer: dynamic(true);;
@@ -876,7 +876,6 @@ $include-ext-window-toast: dynamic(true);;
 $include-ext-window-window: dynamic(true);;
 $include-exclient-application: dynamic(true);;
 $include-exclient-store-personnel: dynamic(true);;
-$include-exclient-view-main-list: dynamic(true);;
 $include-exclient-view-main-main: dynamic(true);;
 $include-exclient-view-main-maincontroller: dynamic(true);;
 $include-exclient-view-main-mainmodel: dynamic(true);;
