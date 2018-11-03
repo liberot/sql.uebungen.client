@@ -4,15 +4,19 @@
  *
  * TODO - Replace this content of this view to suite the needs of your application.
  */
-Ext.define('exclient.view.main.MainController', {
+Ext.define('Exclient.view.main.MainController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.main',
-    onItemSelected: function (sender, record) {
-        Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
+
+    resetDB: function(){
+        Ext.MessageBox.alert('Reset the DB?');
     },
-    onConfirm: function (choice) {
-        if (choice === 'yes') {
-            //
-        }
+
+    importFromSource: function(){
+        Ext.MessageBox.alert('Import from Source');
+    },
+
+    importGarbage: function(){
+        Ext.MessageBox.alert('Import garbage data')
     }
+
 });

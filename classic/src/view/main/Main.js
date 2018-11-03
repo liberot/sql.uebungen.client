@@ -5,31 +5,37 @@
  *
  * TODO - Replace this content of this view to suite the needs of your application.
  */
-Ext.define('exclient.view.main.Main', {
+Ext.define('Exclient.view.main.Main', {
     extend: 'Ext.tab.Panel',
-    xtype: 'app-main',
-
-    requires: [
-        'Ext.plugin.Viewport',
-        'exclient.view.main.MainController',
-        'exclient.view.main.MainModel',
-    ],
-
-    controller: 'main',
-    viewModel: 'main',
-
-    ui: 'navigation',
-
+    
     initComponent: function(){
         this.callParent(arguments);
+        this.controller = new Exclient.view.main.MainController();
+        this.model = new Exclient.view.main.MainModel();
+        var ref = this;
         this.add(
             new Ext.container.Container({
                 items: [
-                    { html: 'xyClient' },
-                    { html: 'ysClient' }
+                    new Ext.Button({
+                        text: 'Reset DB',
+                        handler: function(){
+                            ref.controller.resetDB();
+                        }
+                    }),
+                    new Ext.Button({
+                        text: 'Load Data from Source',
+                        handler: function(){
+                            ref.controller.importFromSource();
+                        }
+                    }),
+                    new Ext.Button({
+                        text: 'Load Garbage Data',
+                        handler: function(){
+                            ref.controller.importGarbage();
+                        }
+                    })
                 ]
             })
         );
     }
 });
-
