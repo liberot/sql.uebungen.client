@@ -9,16 +9,6 @@ Ext.define('cliento.view.main.MainController', {
 
     alias: 'controller.main',
 
-    onItemSelected: function (sender, record) {
-        Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
-    },
-
-    onConfirm: function (choice) {
-        if (choice === 'yes') {
-            //
-        }
-    },
-
     resetDB: function(){
         Ext.MessageBox.alert('resetDB');
     },

@@ -9636,7 +9636,6 @@ body > .x-mask {
 .x-panel-header-title-default > .x-title-text-default:after {
     font-family: ext-watermark;
     font-size: 32.25px;
-    content: 'd';
     position: absolute;
     top: 0;
     right: 0;
@@ -9988,7 +9987,6 @@ body > .x-mask {
 .x-panel-header-title-default-framed > .x-title-text-default-framed:after {
     font-family: ext-watermark;
     font-size: 30px;
-    content: 'd';
     position: absolute;
     top: 0;
     right: 0;
@@ -11814,7 +11812,6 @@ body > .x-mask {
 .x-window-header-title-default > .x-title-text-default:after {
     font-family: ext-watermark;
     font-size: 30px;
-    content: 'd';
     position: absolute;
     top: 0;
     right: 0;

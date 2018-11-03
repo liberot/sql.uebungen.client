@@ -4484,7 +4484,6 @@ div.x-border-layout-ct {
 .x-panel-header-title-light > .x-title-text-light:after {
     font-family: ext-watermark;
     font-size: 32.25px;
-    content: 'd';
     position: absolute;
     top: 0;
     right: 0;
@@ -4837,7 +4836,6 @@ div.x-border-layout-ct {
 .x-panel-header-title-light-framed > .x-title-text-light-framed:after {
     font-family: ext-watermark;
     font-size: 30px;
-    content: 'd';
     position: absolute;
     top: 0;
     right: 0;
@@ -7922,7 +7920,6 @@ div.x-border-layout-ct {
 .x-panel-header-title-navigation > .x-title-text-navigation:after {
     font-family: ext-watermark;
     font-size: 18px;
-    content: 'd';
     position: absolute;
     top: 0;
     right: 0;

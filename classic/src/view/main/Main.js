@@ -15,7 +15,9 @@ Ext.define('cliento.view.main.Main', {
 
         'cliento.view.main.MainController',
         'cliento.view.main.MainModel',
-        'cliento.view.main.List'
+        'cliento.view.main.List',
+
+        'Ext.container.Container'
     ],
 
     controller: 'main',
@@ -23,82 +25,32 @@ Ext.define('cliento.view.main.Main', {
 
     ui: 'navigation',
 
-    tabBarHeaderPosition: 1,
-    titleRotation: 0,
-    tabRotation: 0,
-
-    header: {
-        layout: {
-            align: 'stretchmax'
-        },
-        title: {
-            bind: {
-                text: '{name}'
-            },
-            flex: 0
-        },
-        iconCls: 'fa-th-list'
-    },
-
-    tabBar: {
-        flex: 1,
-        layout: {
-            align: 'stretch',
-            overflowHandler: 'none'
-        }
-    },
-
-    responsiveConfig: {
-        tall: {
-            headerPosition: 'top'
-        },
-        wide: {
-            headerPosition: 'left'
-        }
-    },
-
-    defaults: {
-        bodyPadding: 20,
-        tabConfig: {
-            plugins: 'responsive',
-            responsiveConfig: {
-                wide: {
-                    iconAlign: 'left',
-                    textAlign: 'left'
-                },
-                tall: {
-                    iconAlign: 'top',
-                    textAlign: 'center',
-                    width: 120
-                }
-            }
-        }
-    },
-
-    items: [{
-        title: 'Home',
-        iconCls: 'fa-home',
-        // The following grid shares a store with the classic version's grid as well!
-        items: [{
-            xtype: 'mainlist'
-        }]
-    }, {
-        title: 'Users',
-        iconCls: 'fa-user',
-        bind: {
-            html: '{loremIpsum}'
-        }
-    }, {
-        title: 'Groups',
-        iconCls: 'fa-users',
-        bind: {
-            html: '{loremIpsum}'
-        }
-    }, {
-        title: 'Settings',
-        iconCls: 'fa-cog',
-        bind: {
-            html: '{loremIpsum}'
-        }
-    }]
+    initComponent: function(){
+        this.callParent();
+        var ref = this;
+        this.add(
+            new Ext.container.Container({
+                items: [
+                    new Ext.Button({
+                        text: 'Reset DB',
+                        handler: function(){
+                            ref.controller.resetDB();
+                        }
+                    }),
+                    new Ext.Button({
+                        text: 'Import Source Files',
+                        handler: function(){
+                            ref.controller.importFromSource();
+                        }
+                    }),
+                    new Ext.Button({
+                        text: 'Import Garbage',
+                        handler: function(){
+                            ref.controller.importGarbage();
+                        }
+                    })
+                ]
+            })
+        );
+    }
 });
