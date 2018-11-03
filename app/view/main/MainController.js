@@ -4,19 +4,30 @@
  *
  * TODO - Replace this content of this view to suite the needs of your application.
  */
-Ext.define('Exclient.view.main.MainController', {
+Ext.define('cliento.view.main.MainController', {
     extend: 'Ext.app.ViewController',
 
+    alias: 'controller.main',
+
+    onItemSelected: function (sender, record) {
+        Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
+    },
+
+    onConfirm: function (choice) {
+        if (choice === 'yes') {
+            //
+        }
+    },
+
     resetDB: function(){
-        Ext.MessageBox.alert('Reset the DB?');
+        Ext.MessageBox.alert('resetDB');
     },
 
     importFromSource: function(){
-        Ext.MessageBox.alert('Import from Source');
+        Ext.MessageBox.alert('importFromSource');
     },
 
     importGarbage: function(){
-        Ext.MessageBox.alert('Import garbage data')
+        Ext.MessageBox.alert('importGarbage');
     }
-
 });

@@ -1,41 +1,61 @@
 /**
  * This class is the main view for the application. It is specified in app.js as the
- * "mainView" property. That setting automatically applies the "viewport"
- * plugin causing this view to become the body element (i.e., the viewport).
+ * "mainView" property. That setting causes an instance of this class to be created and
+ * added to the Viewport container.
  *
- * TODO - Replace this content of this view to suite the needs of your application.
+ * TODO - Replace the content of this view to suit the needs of your application.
  */
-Ext.define('Exclient.view.main.Main', {
+Ext.define('cliento.view.main.Main', {
     extend: 'Ext.tab.Panel',
-    
-    initComponent: function(){
-        this.callParent(arguments);
-        this.controller = new Exclient.view.main.MainController();
-        this.model = new Exclient.view.main.MainModel();
-        var ref = this;
-        this.add(
-            new Ext.container.Container({
-                items: [
-                    new Ext.Button({
-                        text: 'Reset DB',
-                        handler: function(){
-                            ref.controller.resetDB();
-                        }
-                    }),
-                    new Ext.Button({
-                        text: 'Load Data from Source',
-                        handler: function(){
-                            ref.controller.importFromSource();
-                        }
-                    }),
-                    new Ext.Button({
-                        text: 'Load Garbage Data',
-                        handler: function(){
-                            ref.controller.importGarbage();
-                        }
-                    })
-                ]
-            })
-        );
-    }
+    xtype: 'app-main',
+
+    requires: [
+        'Ext.MessageBox',
+
+        'cliento.view.main.MainController',
+        'cliento.view.main.MainModel',
+        'cliento.view.main.List'
+    ],
+
+    controller: 'main',
+    viewModel: 'main',
+
+    defaults: {
+        tab: {
+            iconAlign: 'top'
+        },
+        styleHtmlContent: true
+    },
+
+    tabBarPosition: 'bottom',
+
+    items: [
+        {
+            title: 'Home',
+            iconCls: 'x-fa fa-home',
+            layout: 'fit',
+            // The following grid shares a store with the classic version's grid as well!
+            items: [{
+                xtype: 'mainlist'
+            }]
+        },{
+            title: 'Users',
+            iconCls: 'x-fa fa-user',
+            bind: {
+                html: '{loremIpsum}'
+            }
+        },{
+            title: 'Groups',
+            iconCls: 'x-fa fa-users',
+            bind: {
+                html: '{loremIpsum}'
+            }
+        },{
+            title: 'Settings',
+            iconCls: 'x-fa fa-cog',
+            bind: {
+                html: '{loremIpsum}'
+            }
+        }
+    ]
 });

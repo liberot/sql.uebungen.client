@@ -1,6 +1,6 @@
 {
-    "name": "exclient",
-    "namespace": "exclient",
+    "name": "cliento",
+    "namespace": "cliento",
     "version": "1.0.0.0",
     "framework": "ext",
 
@@ -64,13 +64,13 @@
     "sass": {
         /**
          * The root namespace to use when mapping *.scss files to classes in the
-         * sass/src and sass/var directories. For example, "exclient.view.Foo" would
-         * map to "sass/src/view/Foo.scss". If we changed this to "exclient.view" then
+         * sass/src and sass/var directories. For example, "cliento.view.Foo" would
+         * map to "sass/src/view/Foo.scss". If we changed this to "cliento.view" then
          * it would map to "sass/src/Foo.scss". To style classes outside the app's
          * root namespace, change this to "". Doing so would change the mapping of
-         * "exclient.view.Foo" to "sass/src/exclient/view/Foo.scss".
+         * "cliento.view.Foo" to "sass/src/cliento/view/Foo.scss".
          */
-        "namespace": "exclient",
+        "namespace": "cliento",
 
         /**
          * Generated sass source settings
@@ -223,6 +223,7 @@
     /**
      * Settings specific to modern toolkit builds.
      */
+    /*
     "modern": {
         "js": [
             // Remove this entry to individually load sources from the framework.
@@ -231,6 +232,7 @@
             }
         ]
     },
+    */
 
     /**
      * List of all CSS assets in the right inclusion order.
@@ -521,8 +523,9 @@
                     "src": "classic/sass/save"
                 }
             }
-        },
+        }
 
+        /*
         "modern": {
             "toolkit": "modern",
             "theme": "theme-triton",
@@ -533,6 +536,7 @@
                 }
             }
         }
+        */
     },
 
     /**
@@ -547,5 +551,5 @@
      * Uniquely generated id for this application, used as prefix for localStorage keys.
      * Normally you should never change this value.
      */
-    "id": "391353a5-09d2-41cc-bd06-20d014e23846"
+    "id": "dcb58b8d-edd8-4341-807b-7c8860a2282f"
 }

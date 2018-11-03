@@ -1,4 +1,4 @@
-Ext.define('Exclient.store.Personnel', {
+Ext.define('cliento.store.Personnel', {
     extend: 'Ext.data.Store',
 
     alias: 'store.personnel',

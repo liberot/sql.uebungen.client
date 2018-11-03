@@ -5,37 +5,100 @@
  *
  * TODO - Replace this content of this view to suite the needs of your application.
  */
-Ext.define('Exclient.view.main.Main', {
+Ext.define('cliento.view.main.Main', {
     extend: 'Ext.tab.Panel',
-    
-    initComponent: function(){
-        this.callParent(arguments);
-        this.controller = new Exclient.view.main.MainController();
-        this.model = new Exclient.view.main.MainModel();
-        var ref = this;
-        this.add(
-            new Ext.container.Container({
-                items: [
-                    new Ext.Button({
-                        text: 'Reset DB',
-                        handler: function(){
-                            ref.controller.resetDB();
-                        }
-                    }),
-                    new Ext.Button({
-                        text: 'Load Data from Source',
-                        handler: function(){
-                            ref.controller.importFromSource();
-                        }
-                    }),
-                    new Ext.Button({
-                        text: 'Load Garbage Data',
-                        handler: function(){
-                            ref.controller.importGarbage();
-                        }
-                    })
-                ]
-            })
-        );
-    }
+    xtype: 'app-main',
+
+    requires: [
+        'Ext.plugin.Viewport',
+        'Ext.window.MessageBox',
+
+        'cliento.view.main.MainController',
+        'cliento.view.main.MainModel',
+        'cliento.view.main.List'
+    ],
+
+    controller: 'main',
+    viewModel: 'main',
+
+    ui: 'navigation',
+
+    tabBarHeaderPosition: 1,
+    titleRotation: 0,
+    tabRotation: 0,
+
+    header: {
+        layout: {
+            align: 'stretchmax'
+        },
+        title: {
+            bind: {
+                text: '{name}'
+            },
+            flex: 0
+        },
+        iconCls: 'fa-th-list'
+    },
+
+    tabBar: {
+        flex: 1,
+        layout: {
+            align: 'stretch',
+            overflowHandler: 'none'
+        }
+    },
+
+    responsiveConfig: {
+        tall: {
+            headerPosition: 'top'
+        },
+        wide: {
+            headerPosition: 'left'
+        }
+    },
+
+    defaults: {
+        bodyPadding: 20,
+        tabConfig: {
+            plugins: 'responsive',
+            responsiveConfig: {
+                wide: {
+                    iconAlign: 'left',
+                    textAlign: 'left'
+                },
+                tall: {
+                    iconAlign: 'top',
+                    textAlign: 'center',
+                    width: 120
+                }
+            }
+        }
+    },
+
+    items: [{
+        title: 'Home',
+        iconCls: 'fa-home',
+        // The following grid shares a store with the classic version's grid as well!
+        items: [{
+            xtype: 'mainlist'
+        }]
+    }, {
+        title: 'Users',
+        iconCls: 'fa-user',
+        bind: {
+            html: '{loremIpsum}'
+        }
+    }, {
+        title: 'Groups',
+        iconCls: 'fa-users',
+        bind: {
+            html: '{loremIpsum}'
+        }
+    }, {
+        title: 'Settings',
+        iconCls: 'fa-cog',
+        bind: {
+            html: '{loremIpsum}'
+        }
+    }]
 });

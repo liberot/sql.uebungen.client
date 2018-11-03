@@ -15,19 +15,19 @@ This folder contains misc. support code for Sass builds (global functions, etc.)
 
 This folder contains Sass files defining CSS rules corresponding to classes
 included in the application's JavaScript code build. By default, files in this 
-folder are mapped to the application's root namespace, 'exclient'. This is set in
+folder are mapped to the application's root namespace, 'cliento'. This is set in
 `"app.json"`:
 
     "sass": {
-        "namespace": "exclient"
+        "namespace": "cliento"
     }
 
 ### ./sass/var
 
 This folder contains Sass files defining Sass variables corresponding to classes
 included in the application's JavaScript code build. By default, files in this 
-folder are mapped to the application's root namespace, 'exclient' in the same way
-as `"exclient/sass/src"`.
+folder are mapped to the application's root namespace, 'cliento' in the same way
+as `"cliento/sass/src"`.
 
 ## Slicing
 

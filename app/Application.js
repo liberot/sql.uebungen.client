@@ -3,18 +3,10 @@
  * calls Ext.application(). This is the ideal place to handle application launch and
  * initialization details.
  */
-Ext.define('Exclient.Application', {
+Ext.define('cliento.Application', {
     extend: 'Ext.app.Application',
 
-    /*
-    requires: [
-        'Ext.Button',
-        'Exclient.view.main.MainController',
-        'Exclient.view.main.MainModel'
-    ],
-    */
-
-    name: 'exclient',
+    name: 'cliento',
 
     quickTips: false,
     platformConfig: {
@@ -24,11 +16,22 @@ Ext.define('Exclient.Application', {
     },
 
     stores: [
+        // TODO: add global / shared stores here
     ],
 
     launch: function () {
+        // TODO - Launch the application
     },
 
+    /*
     onAppUpdate: function () {
+        Ext.Msg.confirm('Application Update', 'This application has an update, reload?',
+            function (choice) {
+                if (choice === 'yes') {
+                    window.location.reload();
+                }
+            }
+        );
     }
+    */
 });
