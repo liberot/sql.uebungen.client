@@ -6,6 +6,7 @@
  * TODO - Replace this content of this view to suite the needs of your application.
  */
 Ext.define('cliento.view.main.Main', {
+    
     extend: 'Ext.container.Container',
     xtype: 'app-main',
 
@@ -22,8 +23,6 @@ Ext.define('cliento.view.main.Main', {
 
     controller: 'main',
     viewModel: 'main',
-
-    ui: 'navigation',
 
     initComponent: function(){
         this.callParent();
