@@ -16,8 +16,7 @@ Ext.define('cliento.view.main.Main', {
 
         'cliento.view.main.MainController',
         'cliento.view.main.MainModel',
-        'cliento.view.main.List',
-
+    
         'Ext.container.Container'
     ],
 
